@@ -1,9 +1,8 @@
 import {PageWrapper} from "../src/components/styles/PageWrapper.styles";
 import {QueryClient, QueryClientProvider} from "react-query";
 import {CaravanList} from "../src/components/CaravanList/CaravanList";
-import StaticImage from "next/image";
-import logo from "../src/assets/images/logo.png"
 import {Navigation} from "../src/components/Navigation/Navigation";
+import {GlobalStyle} from "../src/components/styles/GlobalStyle";
 
 const queryClient = new QueryClient()
 
@@ -11,7 +10,8 @@ const queryClient = new QueryClient()
 const Home = () => {
     return (
         <QueryClientProvider client={queryClient}>
-            <Navigation />
+            <GlobalStyle/>
+            <Navigation/>
             <PageWrapper>
                 {/*    Header*/}
                 <CaravanList/>
