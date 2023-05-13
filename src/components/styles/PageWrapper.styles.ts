@@ -1,8 +1,9 @@
 import styled from "styled-components";
-import {SCREEN_SIZE_MOBILE} from "../constants";
+import {MAX_VIEWPORT_SIZE, SCREEN_SIZE_MOBILE} from "../../constants";
 
 export const PageWrapper = styled.div`
-  max-width: 1440px;
+  padding-top: 7rem;
+  max-width: ${MAX_VIEWPORT_SIZE}px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1rem;

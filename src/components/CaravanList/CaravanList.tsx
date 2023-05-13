@@ -10,6 +10,9 @@ export const CaravanList = () => {
             <CaravanItem/>
             <CaravanItem/>
             <CaravanItem/>
+            <CaravanItem/>
+            <CaravanItem/>
+            <CaravanItem/>
         </FlexWrap>
     )
 }
