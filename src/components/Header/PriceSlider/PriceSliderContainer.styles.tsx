@@ -3,14 +3,14 @@ import {beige, darkGrey, green} from "../../styles/GlobalStyle"
 import * as Slider from '@radix-ui/react-slider';
 
 export const StyledPriceSliderContainer = styled.div`
-  padding: 1rem 1rem 1rem 0;
+  padding: 1.5rem 1rem 1rem 0;
   width: 27%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
   & > p {
-    padding-bottom: 0.75rem;
+    padding-bottom: 1rem;
   }
 `
 

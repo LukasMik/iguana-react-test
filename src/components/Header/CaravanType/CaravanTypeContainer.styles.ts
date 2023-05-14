@@ -2,14 +2,17 @@ import styled from "styled-components";
 import {beige, green} from "../../styles/GlobalStyle";
 
 export const StyledCaravanTypesContainer = styled.div`
-  padding: 1rem;
+  padding: 1.5rem 1rem 1rem 1rem;
   width: 56%;
   border-left: 1px solid ${beige};
   border-right: 1px solid ${beige};
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
 
   & > p {
-    padding-bottom: 0.75rem;
+    padding-bottom: 1rem;
   }
 `
 
