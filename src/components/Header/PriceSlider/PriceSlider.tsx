@@ -5,14 +5,46 @@ import {
     SliderTrack, StyledInputsContainer,
     StyledPriceSliderContainer
 } from "./PriceSlider.styles";
-import React from "react";
+import React, {useState} from "react";
+import {DEFAULT_PRICE_RANGE} from "../../../constants";
+import {useAtom} from "jotai/index";
+import {activePriceRangeFilterAtom, activeTypesFilterAtom} from "../../../atoms";
 
 export const PriceSlider = () => {
+    const [activePriceRange, setActivePriceRange] = useAtom<number[]>(activePriceRangeFilterAtom)
+
+    const handleSliderChange = (values: number[]) => {
+        console.log('s')
+        // @ts-ignore
+        setActivePriceRange(values);
+    };
+
+    // TODO: fix TS error
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>, type: 'min' | 'max') => {
+        let activeValue = parseInt(e.target.value)
+        !activeValue || activeValue < 0 ? activeValue = 0 : null
+        activeValue > DEFAULT_PRICE_RANGE[0] ? activeValue = DEFAULT_PRICE_RANGE[1] : null
+        if (type === 'min') {
+            // @ts-ignore
+            setActivePriceRange([activeValue, activePriceRange[1]])
+        } else if (type === 'max') {
+            // @ts-ignore
+            setActivePriceRange([activePriceRange[0], activeValue])
+        }
+    }
+
+
     return (
         <StyledPriceSliderContainer>
             <p>Cena za den</p>
             <form>
-                <SliderRoot defaultValue={[100, 6000]} max={10000} min={100} step={10} minStepsBetweenThumbs={100}>
+                <SliderRoot value={activePriceRange}
+                            max={DEFAULT_PRICE_RANGE[1]}
+                            min={DEFAULT_PRICE_RANGE[0]}
+                            step={10}
+                            minStepsBetweenThumbs={100}
+                            onValueChange={handleSliderChange}
+                >
                     <SliderTrack>
                         <SliderRange/>
                     </SliderTrack>
@@ -22,11 +54,11 @@ export const PriceSlider = () => {
                 <StyledInputsContainer>
                     <div>
                         <label>Kč</label>
-                        <input type="number" value={1234}/>
+                        <input type="number" value={activePriceRange[0]} onChange={(e) => handleInputChange(e, 'min')}/>
                     </div>
                     <div>
                         <label>Kč</label>
-                        <input type="number" value={1234}/>
+                        <input type="number" value={activePriceRange[1]} onChange={(e) => handleInputChange(e, 'max')}/>
                     </div>
                 </StyledInputsContainer>
             </form>

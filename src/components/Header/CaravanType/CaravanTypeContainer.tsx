@@ -12,9 +12,11 @@ export const CaravanTypeContainer = () => {
 
     // TODO: fix TS error :(
     const handlePush = (type: ICaravanType) => {
+        // @ts-ignore
         !activeTypesFilter.includes(type) && setActiveTypesFilter([...activeTypesFilter, type])
     }
     const handleRemove = (typeToRemove: ICaravanType) => {
+        // @ts-ignore
         activeTypesFilter.includes(typeToRemove) && setActiveTypesFilter(activeTypesFilter.filter(type => type !== typeToRemove))
     }
 

@@ -8,6 +8,7 @@ export const StyledPriceSliderContainer = styled.div`
   padding: 1.5rem 1rem 1rem 0;
   width: 27%;
   }
+  overflow: hidden;
   padding: 1rem 0 0 0;
   width: 100%;
   display: flex;

@@ -32,4 +32,6 @@ export const CARAVAN_TYPES: ICaravanType[] = [
     },
 ]
 
+export const DEFAULT_PRICE_RANGE: number[] = [100, 10000]
+
 export const DEFAULT_TYPES_FILTER: CaravanTypeTrans[] = [CaravanTypeTrans.BuiltIn, CaravanTypeTrans.Campervan]
