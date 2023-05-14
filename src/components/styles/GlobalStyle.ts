@@ -30,12 +30,14 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 24px;
     font-weight: bold;
     color: ${darkBlue};
+    margin: 3px 0 3px 0;
   }
 
   h3 {
     font-size: 16px;
     color: ${darkBlue};
     font-weight: normal;
+    margin: 0;
   }
 
   small {
@@ -46,5 +48,8 @@ export const GlobalStyle = createGlobalStyle`
   p {
     font-size: 16px;
     color: ${darkGrey};
+    margin: 0;
+    line-height: 20px;
   }
+  
 `
