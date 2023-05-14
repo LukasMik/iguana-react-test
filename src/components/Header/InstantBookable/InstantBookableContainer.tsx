@@ -1,6 +1,6 @@
 import {StyledInstantBookableContainer} from "./InstantBookableContainer.styles";
 import {Selector} from "./Selector";
-import {Flex} from "../../styles/FlexWrap.styles";
+import {Flex} from "../../styles/Flex.styles";
 import {FlexItems} from "../../../types";
 import StaticImage from "next/image";
 import instantBookableIcon from "../../../assets/icons/instantBookable.svg";

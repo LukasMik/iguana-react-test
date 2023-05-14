@@ -1,6 +1,6 @@
 import {StyledCaravanTypesContainer} from "./CaravanTypeContainer.styles";
 import {CaravanTypeItem} from "./CaravanTypeItem";
-import {Flex} from "../../styles/FlexWrap.styles";
+import {Flex} from "../../styles/Flex.styles";
 import {FlexItems, FlexJustify, FlexWrap} from "../../../types";
 
 export const CaravanTypeContainer = () => {

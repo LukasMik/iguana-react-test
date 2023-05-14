@@ -1,5 +1,5 @@
 import {CaravanItem} from "./CaravanItem/CaravanItem";
-import {Flex} from "./styles/FlexWrap.styles";
+import {Flex} from "./styles/Flex.styles";
 import {SectionContainer} from "./styles/SectionContainer.styles";
 import {FlexItems, FlexJustify, FlexWrap} from "../types";
 
