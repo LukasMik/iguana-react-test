@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import {MAX_VIEWPORT_SIZE} from "../../constants";
 
 export const StyledNavigation = styled.nav`
   position: fixed;
@@ -9,11 +8,8 @@ export const StyledNavigation = styled.nav`
   -webkit-backdrop-filter: blur(5px); /* for Safari */
   z-index: 1000;
 
-  & > div {
+  section {
     height: 5rem;
-    max-width: ${MAX_VIEWPORT_SIZE}px;
-    margin-left: auto;
-    margin-right: auto;
     display: flex;
     align-items: center;
   }
