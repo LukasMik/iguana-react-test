@@ -2,7 +2,7 @@ import React from 'react';
 
 import {SliderRange, SliderRoot, SliderThumb, SliderTrack, StyledInputsContainer} from "./PriceSliderContainer.styles";
 
-const SliderDemo = () => (
+export const PriceSlider = () => (
     <form>
         <SliderRoot defaultValue={[100, 6000]} max={10000} min={100} step={10} minStepsBetweenThumbs={100}>
             <SliderTrack>
@@ -23,5 +23,3 @@ const SliderDemo = () => (
         </StyledInputsContainer>
     </form>
 );
-
-export default SliderDemo;

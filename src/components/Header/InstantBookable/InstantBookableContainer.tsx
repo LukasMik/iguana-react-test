@@ -1,10 +1,11 @@
 import {StyledInstantBookableContainer} from "./InstantBookableContainer.styles";
+import {Selector} from "./Selector";
 
 export const InstantBookableContainer = () => {
     return (
         <StyledInstantBookableContainer>
             <p>Okamžitá rezervace</p>
-            <h2>Instant bookable</h2>
+            <Selector />
         </StyledInstantBookableContainer>
     )
 }
