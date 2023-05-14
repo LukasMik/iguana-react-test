@@ -5,10 +5,10 @@ import {
     SliderTrack, StyledInputsContainer,
     StyledPriceSliderContainer
 } from "./PriceSlider.styles";
-import React, {useState} from "react";
-import {DEFAULT_PRICE_RANGE} from "../../../constants";
+import React from "react";
+import {MIN_MAX_PRICE_RANGE} from "../../../constants";
 import {useAtom} from "jotai/index";
-import {activePriceRangeFilterAtom, activeTypesFilterAtom} from "../../../atoms";
+import {activePriceRangeFilterAtom} from "../../../atoms";
 
 export const PriceSlider = () => {
     const [activePriceRange, setActivePriceRange] = useAtom<number[]>(activePriceRangeFilterAtom)
@@ -23,7 +23,7 @@ export const PriceSlider = () => {
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>, type: 'min' | 'max') => {
         let activeValue = parseInt(e.target.value)
         !activeValue || activeValue < 0 ? activeValue = 0 : null
-        activeValue > DEFAULT_PRICE_RANGE[0] ? activeValue = DEFAULT_PRICE_RANGE[1] : null
+        activeValue > MIN_MAX_PRICE_RANGE[0] ? activeValue = MIN_MAX_PRICE_RANGE[1] : null
         if (type === 'min') {
             // @ts-ignore
             setActivePriceRange([activeValue, activePriceRange[1]])
@@ -39,8 +39,8 @@ export const PriceSlider = () => {
             <p>Cena za den</p>
             <form>
                 <SliderRoot value={activePriceRange}
-                            max={DEFAULT_PRICE_RANGE[1]}
-                            min={DEFAULT_PRICE_RANGE[0]}
+                            max={MIN_MAX_PRICE_RANGE[1]}
+                            min={MIN_MAX_PRICE_RANGE[0]}
                             step={10}
                             minStepsBetweenThumbs={100}
                             onValueChange={handleSliderChange}

@@ -1,5 +1,4 @@
 import {CaravanTypeTrans, ICaravanType} from "./types";
-import {atom} from "jotai/esm/vanilla/atom";
 
 export const SCREEN_SIZE_MOBILE: number = 400
 
@@ -32,6 +31,7 @@ export const CARAVAN_TYPES: ICaravanType[] = [
     },
 ]
 
-export const DEFAULT_PRICE_RANGE: number[] = [100, 10000]
+export const MIN_MAX_PRICE_RANGE: number[] = [100, 10000]
+export const DEFAULT_PRICE_RANGE: number[] = [1000, 6000]
 
 export const DEFAULT_TYPES_FILTER: CaravanTypeTrans[] = [CaravanTypeTrans.BuiltIn, CaravanTypeTrans.Campervan]

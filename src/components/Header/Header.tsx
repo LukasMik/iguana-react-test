@@ -9,7 +9,7 @@ export const Header = () => {
             <HeaderContainer>
                 <PriceSlider/>
                 <CaravanTypeContainer/>
-                {/*<InstantBookableContainer/>*/}
+                <InstantBookableContainer/>
             </HeaderContainer>
         </StyledHeader>
     )
