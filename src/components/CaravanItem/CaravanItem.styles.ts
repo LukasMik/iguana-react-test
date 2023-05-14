@@ -5,7 +5,7 @@ import {beige, darkBlue, orange} from "../styles/GlobalStyle";
 export const StyledCaravanItem = styled.div`
   width: 100%;
   @media screen and (min-width: ${SCREEN_SIZE_MOBILE}px) {
-    width: 24.5rem;
+    width: calc(33.3333% - 1.3333rem);
   }
   background: #FFFFFF;
   border: 1px solid #EDEAE3;

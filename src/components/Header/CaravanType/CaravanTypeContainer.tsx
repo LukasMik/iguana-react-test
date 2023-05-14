@@ -1,18 +1,18 @@
 import {StyledCaravanTypesContainer} from "./CaravanTypeContainer.styles";
 import {CaravanTypeItem} from "./CaravanTypeItem";
-import {FlexWrap} from "../../styles/FlexWrap.styles";
-import {FlexItems} from "../../../types";
+import {Flex} from "../../styles/FlexWrap.styles";
+import {FlexItems, FlexJustify, FlexWrap} from "../../../types";
 
 export const CaravanTypeContainer = () => {
     return (
         <StyledCaravanTypesContainer>
             <p>Typ karavanu</p>
-            <FlexWrap gap={1} items={FlexItems.CENTER}>
+            <Flex gap={1} items={FlexItems.CENTER} justify={FlexJustify.SPACE_BETWEEN} wrap={FlexWrap.FLEX_WRAP}>
                 <CaravanTypeItem/>
                 <CaravanTypeItem/>
                 <CaravanTypeItem/>
                 <CaravanTypeItem/>
-            </FlexWrap>
+            </Flex>
         </StyledCaravanTypesContainer>
     )
 }

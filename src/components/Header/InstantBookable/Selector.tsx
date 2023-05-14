@@ -8,7 +8,6 @@ import {SelectItemProps, SelectScrollDownButton} from "@radix-ui/react-select";
 
 const values = ['ANO', 'NE']
 export const Selector = () => {
-        console.log(<Select.Value></Select.Value>)
         return (<Select.Root>
                 <SelectTrigger aria-label="Food">
                     <Select.Value defaultValue={values[0]}/>
@@ -34,7 +33,7 @@ export const Selector = () => {
 
 const SelectTrigger = styled(Select.SelectTrigger)`
   all: unset;
-  width: 100%;
+  width: 93%;
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
@@ -47,6 +46,7 @@ const SelectTrigger = styled(Select.SelectTrigger)`
   color: ${darkBlue};
   border: 1px solid ${beige};
   transition: all 0.3s ease-in-out;
+  margin-top: 1rem;
 
   &:hover {
     cursor: pointer;

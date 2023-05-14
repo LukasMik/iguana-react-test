@@ -1,12 +1,12 @@
 import {CaravanItem} from "./CaravanItem/CaravanItem";
-import {FlexWrap} from "./styles/FlexWrap.styles";
+import {Flex} from "./styles/FlexWrap.styles";
 import {SectionContainer} from "./styles/SectionContainer.styles";
-import {FlexItems, FlexJustify} from "../types";
+import {FlexItems, FlexJustify, FlexWrap} from "../types";
 
 export const CaravanList = () => {
     return (
         <SectionContainer>
-            <FlexWrap gap={2} justify={FlexJustify.SPACE_BETWEEN} items={FlexItems.CENTER}>
+            <Flex gap={2} justify={FlexJustify.SPACE_BETWEEN} items={FlexItems.CENTER} wrap={FlexWrap.FLEX_WRAP}>
                 <CaravanItem/>
                 <CaravanItem/>
                 <CaravanItem/>
@@ -16,7 +16,7 @@ export const CaravanList = () => {
                 <CaravanItem/>
                 <CaravanItem/>
                 <CaravanItem/>
-            </FlexWrap>
+            </Flex>
         </SectionContainer>
     )
 }

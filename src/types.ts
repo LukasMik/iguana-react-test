@@ -15,3 +15,8 @@ export enum FlexItems {
     BASELINE = 'baseline',
     STRETCH = 'stretch',
 }
+
+export enum FlexWrap {
+    FLEX_WRAP = 'wrap',
+    FLEX_NOWRAP = 'nowrap'
+}

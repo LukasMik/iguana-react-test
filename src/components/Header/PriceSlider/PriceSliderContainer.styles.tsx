@@ -1,10 +1,15 @@
 import styled from "styled-components";
 import {beige, darkGrey, green} from "../../styles/GlobalStyle"
 import * as Slider from '@radix-ui/react-slider';
+import {SCREEN_SIZE_MOBILE} from "../../../constants";
 
 export const StyledPriceSliderContainer = styled.div`
+  @media screen and (min-width: ${SCREEN_SIZE_MOBILE}px) {
   padding: 1.5rem 1rem 1rem 0;
   width: 27%;
+  }
+  padding: 1rem 0 0 0;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -63,7 +68,8 @@ export const StyledInputsContainer = styled.div`
 
   div {
     position: relative;
-      width: 50%;
+    width: 50%;
+
     input {
       width: 100%;
       height: 3rem;
@@ -75,6 +81,7 @@ export const StyledInputsContainer = styled.div`
         border: 2px solid ${beige};
       }
     }
+
     label {
       position: absolute;
       top: .9rem;
