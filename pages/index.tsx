@@ -1,8 +1,8 @@
-import {PageWrapper} from "../src/components/styles/PageWrapper.styles";
 import {QueryClient, QueryClientProvider} from "react-query";
-import {CaravanList} from "../src/components/CaravanList/CaravanList";
+import {CaravanList} from "../src/components/CaravanList";
 import {Navigation} from "../src/components/Navigation/Navigation";
 import {GlobalStyle} from "../src/components/styles/GlobalStyle";
+import {Header} from "../src/components/Header/Header";
 
 const queryClient = new QueryClient()
 
@@ -12,10 +12,8 @@ const Home = () => {
         <QueryClientProvider client={queryClient}>
             <GlobalStyle/>
             <Navigation/>
-            <PageWrapper>
-                {/*    Header*/}
-                <CaravanList/>
-            </PageWrapper>
+            <Header/>
+            <CaravanList/>
         </QueryClientProvider>
     )
 }

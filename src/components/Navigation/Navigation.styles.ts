@@ -1,8 +1,5 @@
 import styled from "styled-components";
 import {MAX_VIEWPORT_SIZE} from "../../constants";
-import {PageWrapper} from "../styles/PageWrapper.styles";
-
-
 
 export const StyledNavigation = styled.nav`
   position: fixed;
@@ -20,8 +17,4 @@ export const StyledNavigation = styled.nav`
     display: flex;
     align-items: center;
   }
-`
-
-export const NavContainer = styled(PageWrapper)`
-  padding-top: 0;
 `
