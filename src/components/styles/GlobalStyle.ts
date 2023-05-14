@@ -51,5 +51,11 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     line-height: 20px;
   }
+
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none; // Hide the default appearance
+    margin: 0; // Remove any margin
+  }
   
 `
