@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {SliderRange, SliderRoot, SliderThumb, SliderTrack, StyledInputsContainer} from "./PriceSliderContainer.styles";
+import {SliderRange, SliderRoot, SliderThumb, SliderTrack} from "./PriceSliderContainer.styles";
 
 const SliderDemo = () => (
     <form>
@@ -11,16 +11,6 @@ const SliderDemo = () => (
             <SliderThumb/>
             <SliderThumb/>
         </SliderRoot>
-        <StyledInputsContainer>
-            <div>
-                <label>Kč</label>
-                <input type="number" value={1234}/>
-            </div>
-            <div>
-                <label>Kč</label>
-                <input type="number" value={1234}/>
-            </div>
-        </StyledInputsContainer>
     </form>
 );
 

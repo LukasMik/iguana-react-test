@@ -37,12 +37,13 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 16px;
     color: ${darkBlue};
     font-weight: normal;
-    margin: 0;
+    margin: 0 0 10px 0;
   }
 
   small {
     font-size: 12px;
-    color: ${darkGrey}
+    color: ${darkGrey};
+    margin: 0;
   }
 
   p {
