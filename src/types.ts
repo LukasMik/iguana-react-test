@@ -34,7 +34,7 @@ export interface ICaravanType {
     description: string,
 }
 
-export interface IPriceFilter {
-    min: number,
-    max: number
+export enum InstantBookableValues {
+    TRUE = 'Ano',
+    FALSE = 'Ne'
 }

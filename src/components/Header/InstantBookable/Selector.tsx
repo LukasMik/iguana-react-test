@@ -1,8 +1,8 @@
-import React, {Ref} from 'react';
+import React, {Ref, useState} from 'react';
 import * as Select from '@radix-ui/react-select';
+import {SelectItemProps, SelectScrollDownButton} from '@radix-ui/react-select';
 import {CheckIcon, ChevronDownIcon} from '@radix-ui/react-icons';
 import {darkGrey} from "../../styles/GlobalStyle";
-import {SelectItemProps, SelectScrollDownButton} from "@radix-ui/react-select";
 import {
     SelectContent,
     SelectIcon,
@@ -11,12 +11,25 @@ import {
     StyledItem,
     StyledItemIndicator
 } from "./InstantBookableContainer.styles";
+import {useAtom} from "jotai";
+import {activeInstantBookableFilterAtom} from "../../../atoms";
+import {INSTANT_BOOKABLE_VALUES} from "../../../constants";
+import {InstantBookableValues} from "../../../types";
 
-
-const values = ['ANO', 'NE']
-const defaultValue = values[0];
 export const Selector = () => {
-    return (<Select.Root defaultValue={defaultValue} value={defaultValue}>
+    const [activeValue, setActiveValue] = useState<InstantBookableValues>(InstantBookableValues.TRUE)
+    const [isInstantBookable, setIsInstantBookable] = useAtom<boolean>(activeInstantBookableFilterAtom)
+
+    // TODO: fix TS error
+    const handleValueChange = (value: InstantBookableValues) => {
+        // @ts-ignore
+        value === InstantBookableValues.TRUE && setIsInstantBookable(true)
+        // @ts-ignore
+        value === InstantBookableValues.FALSE && setIsInstantBookable(false)
+        setActiveValue(value)
+    }
+    return (
+        <Select.Root value={activeValue} onValueChange={handleValueChange}>
             <SelectTrigger aria-label="Food">
                 <Select.Value/>
                 <SelectIcon>
@@ -26,8 +39,8 @@ export const Selector = () => {
             <Select.Portal>
                 <SelectContent>
                     <SelectViewport>
-                        <SelectItem value={values[0]}>Ano</SelectItem>
-                        <SelectItem value={values[1]}>Ne</SelectItem>
+                        <SelectItem value={INSTANT_BOOKABLE_VALUES[0]}>{InstantBookableValues.TRUE}</SelectItem>
+                        <SelectItem value={INSTANT_BOOKABLE_VALUES[1]}>{InstantBookableValues.FALSE}</SelectItem>
                     </SelectViewport>
                     <SelectScrollDownButton>
                         <ChevronDownIcon/>
@@ -38,17 +51,18 @@ export const Selector = () => {
     )
 };
 
-// eslint-disable-next-line react/display-name
-const SelectItem = React.forwardRef((
-    {children, ...props}: SelectItemProps,
+const SelectItem = React.forwardRef(function SelectItem(
+    { children, ...props }: SelectItemProps,
     forwardedRef: Ref<HTMLDivElement>
-) => {
+) {
     return (
         <StyledItem {...props} ref={forwardedRef}>
             <Select.ItemText>{children}</Select.ItemText>
             <StyledItemIndicator>
-                <CheckIcon/>
+                <CheckIcon />
             </StyledItemIndicator>
         </StyledItem>
     );
 });
+
+SelectItem.displayName = 'SelectItem';

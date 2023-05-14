@@ -5,7 +5,7 @@ import {GlobalStyle} from "../src/components/styles/GlobalStyle";
 import {Header} from "../src/components/Header/Header";
 import {useAtom} from "jotai";
 import {ICaravanType} from "../src/types";
-import {activePriceRangeFilterAtom, activeTypesFilterAtom} from "../src/atoms";
+import {activeInstantBookableFilterAtom, activePriceRangeFilterAtom, activeTypesFilterAtom} from "../src/atoms";
 import {useEffect} from "react";
 
 const queryClient = new QueryClient()
@@ -14,10 +14,11 @@ const queryClient = new QueryClient()
 const Home = () => {
     const [activeTypesFilter] = useAtom<ICaravanType[]>(activeTypesFilterAtom)
     const [activePriceFilter] = useAtom<number[]>(activePriceRangeFilterAtom)
+    const [activeInstantBookableFilter] = useAtom(activeInstantBookableFilterAtom)
 
     useEffect(() => {
-        console.log(activePriceFilter)
-    }, [activePriceFilter])
+        console.log(activePriceFilter, activeTypesFilter, activeInstantBookableFilter)
+    }, [activeInstantBookableFilter, activePriceFilter, activeTypesFilter])
     return (
         <QueryClientProvider client={queryClient}>
             <GlobalStyle/>
