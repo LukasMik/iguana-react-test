@@ -7,29 +7,29 @@ import {SelectItemProps, SelectScrollDownButton} from "@radix-ui/react-select";
 
 
 const values = ['ANO', 'NE']
+const defaultValue = values[0];
 export const Selector = () => {
-        return (<Select.Root>
-                <SelectTrigger aria-label="Food">
-                    <Select.Value defaultValue={values[0]}/>
-                    <SelectIcon>
+    return (<Select.Root defaultValue={defaultValue} value={defaultValue}>
+            <SelectTrigger aria-label="Food">
+                <Select.Value/>
+                <SelectIcon>
+                    <ChevronDownIcon/>
+                </SelectIcon>
+            </SelectTrigger>
+            <Select.Portal>
+                <SelectContent>
+                    <SelectViewport>
+                        <SelectItem value={values[0]}>Ano</SelectItem>
+                        <SelectItem value={values[1]}>Ne</SelectItem>
+                    </SelectViewport>
+                    <SelectScrollDownButton>
                         <ChevronDownIcon/>
-                    </SelectIcon>
-                </SelectTrigger>
-                <Select.Portal>
-                    <SelectContent>
-                        <SelectViewport>
-                            <SelectItem value={values[0]}>Ano</SelectItem>
-                            <SelectItem value={values[1]}>Ne</SelectItem>
-                        </SelectViewport>
-                        <SelectScrollDownButton>
-                            <ChevronDownIcon/>
-                        </SelectScrollDownButton>
-                    </SelectContent>
-                </Select.Portal>
-            </Select.Root>
-        )
-    }
-;
+                    </SelectScrollDownButton>
+                </SelectContent>
+            </Select.Portal>
+        </Select.Root>
+    )
+};
 
 const SelectTrigger = styled(Select.SelectTrigger)`
   all: unset;
