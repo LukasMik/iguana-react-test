@@ -8,7 +8,7 @@ Stránka musí obsahovat:
     
 - Hlavičku
 - Filtry
-  - PriceSlider na cenu - cena od do, výběr knihovny pro slider je na Vás. [100 - 10000] Kč
+  - PriceSliderContainer na cenu - cena od do, výběr knihovny pro slider je na Vás. [100 - 10000] Kč
   - Typ karavanu - je možné vybrat více typů pro filtrovaní [Campervan, Intergrated, BuiltIn , Alcove]
   - Okamžitá rezervace - jednoduchý toggle [true / false]
 - Seznam karavanů
