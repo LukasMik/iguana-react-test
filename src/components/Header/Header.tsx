@@ -1,5 +1,5 @@
 import {HeaderContainer, StyledHeader} from "./Header.styles";
-import {PriceSliderContainer} from "./PriceSlider/PriceSliderContainer";
+import {PriceSlider} from "./PriceSlider/PriceSlider";
 import {CaravanTypeContainer} from "./CaravanType/CaravanTypeContainer";
 import {InstantBookableContainer} from "./InstantBookable/InstantBookableContainer";
 
@@ -7,9 +7,9 @@ export const Header = () => {
     return (
         <StyledHeader>
             <HeaderContainer>
-                <PriceSliderContainer/>
+                {/*<PriceSlider/>*/}
                 <CaravanTypeContainer/>
-                <InstantBookableContainer/>
+                {/*<InstantBookableContainer/>*/}
             </HeaderContainer>
         </StyledHeader>
     )

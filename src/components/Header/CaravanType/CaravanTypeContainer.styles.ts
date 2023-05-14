@@ -25,6 +25,10 @@ export const StyledCaravanTypesContainer = styled.div`
   }
 `
 
+interface ICaravanTypeProps {
+    isActive: boolean
+}
+
 export const StyledCaravanTypeItem = styled.div`
   @media screen and (min-width: ${SCREEN_SIZE_MOBILE}px) {
   width: 9.75rem;
@@ -32,12 +36,13 @@ export const StyledCaravanTypeItem = styled.div`
   }
   width: calc(50% - 0.5rem);
   display: inline;
+  height: 100%;
   padding: 1rem;
-  border: 1px solid ${beige};
+  border: ${({isActive}: ICaravanTypeProps) => isActive ? `2px solid ${green}` : `1px solid ${beige}`};
   border-radius: 8px;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.1s ease-in-out;
   &:hover {
-    border: 1px solid ${green};
+    border: ${({isActive}: ICaravanTypeProps) => isActive ? `2px solid ${green}` : `1px solid ${green}`};
     cursor: pointer;
   }
 `

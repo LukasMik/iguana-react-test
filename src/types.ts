@@ -20,3 +20,21 @@ export enum FlexWrap {
     FLEX_WRAP = 'wrap',
     FLEX_NOWRAP = 'nowrap'
 }
+export enum CaravanTypeTrans {
+    Campervan = 'Campervan',
+    Intergrated = 'Integrál',
+    BuiltIn = 'Vestavba',
+    Alcove = 'Přívěs'
+}
+
+export interface ICaravanType {
+    id: number,
+    name: string,
+    translation: CaravanTypeTrans,
+    description: string,
+}
+
+export interface IPriceFilter {
+    min: number,
+    max: number
+}
