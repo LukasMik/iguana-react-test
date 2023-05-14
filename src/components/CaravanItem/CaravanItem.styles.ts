@@ -41,14 +41,15 @@ export const FeaturesSection = styled.div`
     color: ${darkBlue};
     padding-bottom: 8px;
   }
-  
+
   & > div {
     display: flex;
     align-items: center;
-   gap: .75rem;
+    gap: .75rem;
+
     p {
       margin-left: -.3rem;
-     font-size: 14px;
+      font-size: 14px;
       color: ${darkBlue};
     }
   }
