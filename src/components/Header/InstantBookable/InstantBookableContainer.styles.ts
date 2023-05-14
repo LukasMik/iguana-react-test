@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import * as Select from '@radix-ui/react-select';
 import {SCREEN_SIZE_MOBILE} from "../../../constants";
-import {beige, darkBlue, darkGrey} from "../../styles/GlobalStyle";
+import {beige, darkBlue, darkGrey, green} from "../../styles/GlobalStyle";
 
 export const StyledInstantBookableContainer = styled.div`
   @media screen and (min-width: ${SCREEN_SIZE_MOBILE}px) {
@@ -51,16 +51,19 @@ export const StyledItem = styled(Select.Item)`
   font-size: 16px;
   line-height: 1px;
   color: ${darkBlue};
-  border-radius: 8px;
+  border-radius: 6px;
   display: flex;
   align-items: center;
-  height: 25px;
-  padding: 0 35px 0 25px;
+  justify-content: space-between;
+  height: 2rem;
+  padding: .2rem .5rem .2rem 1.5rem;
   position: relative;
   user-select: none;
 
   &:hover {
     cursor: pointer;
+    outline: none;
+    border: 2px solid ${green}
   }
 `
 
