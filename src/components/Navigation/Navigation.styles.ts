@@ -7,7 +7,7 @@ export const StyledNavigation = styled.nav`
   background-color: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px); /* for Safari */
-  z-index: 1000;
+  z-index: 80;
 
   section {
     height: 5rem;

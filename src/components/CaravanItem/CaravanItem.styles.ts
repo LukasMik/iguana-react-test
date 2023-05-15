@@ -21,6 +21,7 @@ export const ImageContainer = styled.div`
   width: 100%;
   height: 11.8rem;
   position: relative;
+  cursor: pointer;
 `
 
 export const Descriptor = styled.small`
