@@ -38,3 +38,21 @@ export enum InstantBookableValues {
     TRUE = 'Ano',
     FALSE = 'Ne'
 }
+
+export interface ICaravan {
+    location: string,
+    instantBookable: boolean,
+    name: string,
+    passengersCapacity: number,
+    sleepCapacity: number,
+    price: number,
+    vehicleType: string,
+    toilet: boolean,
+    shower: boolean,
+    pictures: string[]
+}
+
+export interface IResponse {
+    count: number,
+    items: ICaravan[]
+}

@@ -3,7 +3,6 @@ import {
     CARAVAN_TYPES,
     DEFAULT_TYPES_FILTER,
     DEFAULT_PRICE_RANGE,
-    INSTANT_BOOKABLE_VALUES
 } from "./constants";
 import {ICaravanType} from "./types";
 

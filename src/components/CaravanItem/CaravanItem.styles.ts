@@ -12,15 +12,15 @@ export const StyledCaravanItem = styled.div`
   border-radius: 8px;
   overflow: hidden;
 
-  img {
-    width: 100%;
-    height: 11.8rem;
-    object-fit: cover;
-  }
-
   & > div {
     padding: 1rem;
   }
+`
+
+export const ImageContainer = styled.div`
+  width: 100%;
+  height: 11.8rem;
+  position: relative;
 `
 
 export const Descriptor = styled.small`
