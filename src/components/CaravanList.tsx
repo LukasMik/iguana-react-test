@@ -15,7 +15,6 @@ export const CaravanList = () => {
     const {isLoading, isError, error, data: allCaravans} = useGetAllCaravansAPI()
 
     const filteredCaravans = allCaravans
-    console.log(filteredCaravans)
 
     if (isLoading) {
         return (

@@ -5,14 +5,21 @@ import toilette from "../../assets/icons/toilette.svg"
 import shower from "../../assets/icons/shower.svg"
 import instantBookableIcon from "../../assets/icons/instantBookable.svg"
 import StaticImage from "next/image";
-import {ICaravan} from "../../types";
+import {CaravanTypeTrans, ICaravan} from "../../types";
 import Image from "next/image";
+import {CARAVAN_TYPES} from "../../constants";
 
 interface IProps {
     caravan: ICaravan
 }
 
 export const CaravanItem = ({caravan}: IProps) => {
+
+    const vehicleType = () => {
+        const translation = CARAVAN_TYPES.find(type => type.name === caravan.vehicleType)?.translation
+        return translation ? translation : caravan.vehicleType
+    }
+
     return (
         <StyledCaravanItem>
             <ImageContainer>
@@ -23,7 +30,7 @@ export const CaravanItem = ({caravan}: IProps) => {
                 />
             </ImageContainer>
             <div>
-                <Descriptor>{caravan.vehicleType}</Descriptor>
+                <Descriptor>{vehicleType()}</Descriptor>
                 <h2>{caravan.name}</h2>
                 <FeaturesSection>
                     <p>{caravan.location}</p>

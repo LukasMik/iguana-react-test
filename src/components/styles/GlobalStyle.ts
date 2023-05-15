@@ -11,7 +11,7 @@ export const GlobalStyle = createGlobalStyle`
   ${normalize}
   html,
   body {
-    padding: 0;
+    padding: 0 0 5rem 0;
     margin: 0;
     font-family: -apple-system, Inconsolata, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
