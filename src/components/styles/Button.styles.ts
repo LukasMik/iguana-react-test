@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {darkBlue, darkGrey, green} from "./GlobalStyle";
+import {darkGrey, green} from "./GlobalStyle";
 
 export const StyledButton = styled.button`
   border-radius: 8px;

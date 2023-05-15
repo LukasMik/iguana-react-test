@@ -26,8 +26,8 @@ export const CaravanList = () => {
         )?.filter(car =>
             car.instantBookable === activeInstantBookableFilter
         )
-        setGroupLength(6)
         setFilteredCaravans(filteredCaravans);
+        setGroupLength(6)
     }, [activeTypesFilter, activePriceFilter, activeInstantBookableFilter, allCaravans]);
 
     if (isLoading) {
@@ -48,7 +48,7 @@ export const CaravanList = () => {
 
     const groupItems = filteredCaravans ? filteredCaravans.slice(0, groupLength) : []
     const handleNext = () => {
-        setGroupLength(groupLength + groupLength);
+        setGroupLength(prevGroupLength => prevGroupLength + 6)
     }
     const renderFilteredCaravans = () => {
         if (filteredCaravans && filteredCaravans.length > 0) {

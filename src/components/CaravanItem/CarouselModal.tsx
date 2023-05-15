@@ -1,4 +1,4 @@
-import React, {ReactElement} from 'react';
+import React from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
 import {Cross2Icon} from '@radix-ui/react-icons';
 import {ImageContainer} from "./CaravanItem.styles";
@@ -13,19 +13,18 @@ interface IProps {
 
 export const CarouselModal = ({pictures}: IProps) => {
 
-    const carouselItems = () => {
-        return [
-            ...pictures.map((pic, index) => (
-                <CarouselImageWrapper key={index}>
-                    <Image src={pic}
-                           alt="caravan_image"
-                           layout='fill'
-                           objectFit="cover"
-                           draggable='false'
-                    />
-                </CarouselImageWrapper>
-            ))]
-    }
+    const carouselItems = () => [
+        ...pictures.map((pic, index) => (
+            <CarouselImageWrapper key={index}>
+                <Image src={pic}
+                       alt="caravan_image"
+                       layout='fill'
+                       objectFit="cover"
+                       draggable='false'
+                />
+            </CarouselImageWrapper>
+        ))]
+
     return (
         <Dialog.Root>
             <Dialog.Trigger asChild>

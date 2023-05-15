@@ -1,6 +1,5 @@
 import styled, {keyframes} from "styled-components";
 import * as Dialog from '@radix-ui/react-dialog';
-import {darkBlue} from "../styles/GlobalStyle";
 
 export const overlayShow = keyframes`
     0% { 
@@ -65,7 +64,7 @@ export const IconButton = styled.button`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: ${darkBlue};
+  color: white;
   position: absolute;
   top: 10px;
   right: 10px;
@@ -73,11 +72,11 @@ export const IconButton = styled.button`
   transition: all 0.2s ease-in-out;
 
   &:hover {
-    background-color: ${darkBlue + 40}
+    background-color: #ffffff4d;
   }
 
   &:focus {
-    box-shadow: 0 0 0 1px ${darkBlue}
+    box-shadow: 0 0 0 1px white
   }
 `
 

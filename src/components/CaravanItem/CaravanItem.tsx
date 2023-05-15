@@ -15,10 +15,9 @@ interface IProps {
 
 export const CaravanItem = ({caravan}: IProps) => {
 
-    const vehicleType = () => {
-        const translation = CARAVAN_TYPES.find(type => type.name === caravan.vehicleType)?.translation
-        return translation ? translation : caravan.vehicleType
-    }
+    const vehicleType = () => (
+        CARAVAN_TYPES.find(type => type.name === caravan.vehicleType)?.translation || caravan.vehicleType
+    )
 
     return (
         <StyledCaravanItem>
@@ -29,11 +28,16 @@ export const CaravanItem = ({caravan}: IProps) => {
                 <FeaturesSection>
                     <p>{caravan.location}</p>
                     <div>
-                        {caravan.passengersCapacity && <>
-                            <StaticImage src={seats} width={20} height={20} alt="seats"/>
-                            <p>{caravan.passengersCapacity}</p></>}
-                        {caravan.sleepCapacity && <><StaticImage src={beds} width={20} height={20} alt="beds"/>
-                            <p>{caravan.sleepCapacity}</p></>}
+                        {caravan.passengersCapacity &&
+                            <>
+                                <StaticImage src={seats} width={20} height={20} alt="seats"/>
+                                <p>{caravan.passengersCapacity}</p>
+                            </>}
+                        {caravan.sleepCapacity &&
+                            <>
+                                <StaticImage src={beds} width={20} height={20} alt="beds"/>
+                                <p>{caravan.sleepCapacity}</p>
+                            </>}
                         {caravan.toilet && <StaticImage src={toilette} width={20} height={20} alt="toilette"/>}
                         {caravan.shower && <StaticImage src={shower} width={20} height={20} alt=""/>}
                     </div>

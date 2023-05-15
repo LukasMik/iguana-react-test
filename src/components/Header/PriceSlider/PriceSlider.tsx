@@ -7,7 +7,7 @@ import {
 } from "./PriceSlider.styles";
 import React from "react";
 import {MIN_MAX_PRICE_RANGE} from "../../../constants";
-import {useAtom} from "jotai/index";
+import {useAtom} from "jotai";
 import {activePriceRangeFilterAtom} from "../../../atoms";
 
 export const PriceSlider = () => {
@@ -43,8 +43,7 @@ export const PriceSlider = () => {
                             min={MIN_MAX_PRICE_RANGE[0]}
                             step={10}
                             minStepsBetweenThumbs={100}
-                            onValueChange={handleSliderChange}
-                >
+                            onValueChange={handleSliderChange}>
                     <SliderTrack>
                         <SliderRange/>
                     </SliderTrack>
