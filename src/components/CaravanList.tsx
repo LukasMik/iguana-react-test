@@ -45,12 +45,11 @@ export const CaravanList = () => {
             </TextCenter>
         )
     }
-    const groupItems = filteredCaravans ? filteredCaravans.slice(0, groupLength) : []
 
+    const groupItems = filteredCaravans ? filteredCaravans.slice(0, groupLength) : []
     const handleNext = () => {
         setGroupLength(groupLength + groupLength);
     }
-
     const renderFilteredCaravans = () => {
         if (filteredCaravans && filteredCaravans.length > 0) {
             return (
