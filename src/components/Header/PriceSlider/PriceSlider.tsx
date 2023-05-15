@@ -13,13 +13,13 @@ import {activePriceRangeFilterAtom} from "../../../atoms";
 export const PriceSlider = () => {
     const [activePriceRange, setActivePriceRange] = useAtom<number[]>(activePriceRangeFilterAtom)
 
+    // TODO: fix TS error
+
     const handleSliderChange = (values: number[]) => {
-        console.log('s')
         // @ts-ignore
         setActivePriceRange(values);
     };
 
-    // TODO: fix TS error
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>, type: 'min' | 'max') => {
         let activeValue = parseInt(e.target.value)
         !activeValue || activeValue < 0 ? activeValue = 0 : null

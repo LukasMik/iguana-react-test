@@ -17,7 +17,7 @@ import {INSTANT_BOOKABLE_VALUES} from "../../../constants";
 import {InstantBookableValues} from "../../../types";
 
 export const Selector = () => {
-    const [activeValue, setActiveValue] = useState<InstantBookableValues>(InstantBookableValues.TRUE)
+    const [activeValue, setActiveValue] = useState<InstantBookableValues>(InstantBookableValues.FALSE)
     const [isInstantBookable, setIsInstantBookable] = useAtom<boolean>(activeInstantBookableFilterAtom)
 
     // TODO: fix TS error
