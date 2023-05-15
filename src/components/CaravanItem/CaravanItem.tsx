@@ -22,7 +22,7 @@ export const CaravanItem = ({caravan}: IProps) => {
 
     return (
         <StyledCaravanItem>
-            <CarouselModal caravan={caravan}/>
+            <CarouselModal pictures={caravan.pictures}/>
             <div>
                 <Descriptor>{vehicleType()}</Descriptor>
                 <h2>{caravan.name}</h2>

@@ -23,31 +23,36 @@ export const contentShow = keyframes`
 `
 
 export const DialogOverlay = styled(Dialog.Overlay)`
-    background-color: #000000B3;
-    position: fixed;
-    inset: 0;
-    animation: ${overlayShow} 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  background-color: #000000B3;
+  position: fixed;
+  backdrop-filter: blur(1px);
+  inset: 0;
+  animation: ${overlayShow} 150ms cubic-bezier(0.16, 1, 0.3, 1);
 `
 
 export const DialogContent = styled(Dialog.Content)`
-    background-color: white;
-    border-radius: 6px;
-    box-shadow: hsl(206 22% 7% / 35%) 0 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90vw;
-    max-height: 85vh;
-    padding: 25px;
-    animation: ${contentShow} 150ms cubic-bezier(0.16, 1, 0.3, 1);
-    &:focus { outline: none };
+  background-color: #000000B3;
+  backdrop-filter: blur(5px);
+  border-radius: 6px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  max-height: 85vh;
+  padding: 25px;
+  animation: ${contentShow} 150ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  &:focus {
+    outline: none
+  }
+;
 `
 
 export const DialogTitle = styled(Dialog.Title)`
-    margin: 0;
+    margin: 0 0 3rem 0;
     font-weight: 500;
-    color: ${darkBlue};
+    color: white;
     font-size: 17px;
 `
 
@@ -71,8 +76,14 @@ export const IconButton = styled.button`
     background-color: ${darkBlue + 40}
   }
 
-,
-&: focus {
-  box-shadow: 0 0 0 1px ${darkBlue}
-},
+  &:focus {
+    box-shadow: 0 0 0 1px ${darkBlue}
+  }
+`
+
+export const CarouselImageWrapper = styled.div`
+  position: relative;
+  margin-right: 5rem;
+  width: 400px;
+  height: 300px;
 `
